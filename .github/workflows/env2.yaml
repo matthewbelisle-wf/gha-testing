@@ -1,0 +1,9 @@
+on: [push, pull_request]
+
+jobs:
+  run-env:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+    - run: env | cut -f 1 -d '='
